@@ -1,21 +1,24 @@
+```mermaid
+
 flowchart TD
     User[Пользователь<br>в корпоративном мессенджере]
 
-    subgraph "Мультиагентная AI-система (единый интерфейс)"
+    subgraph "Мультиагентная AI-система для работы в Confluence"
         Bot[Чат-бот<br><i>маршрутизация, контекст</i>]
-        Analyst[Агент-Аналитик<br><i>LLM: анализ, рекомендации</i>]
-        Editor[Агент-Редактор<br><i>LLM + RAG: внесение правок</i>]
+        Analyst[Агент-аналитик<br><i>LLM: анализ, рекомендации</i>]
+        Editor[Агент-редактор<br><i>LLM + RAG: внесение правок</i>]
     end
 
-    Confluence[Корпоративный портал<br>Confluence / Wiki]
-    LLM_Analyst[Внешний LLM-провайдер<br><i>для анализа</i>]
-    LLM_Editor[Внешний LLM-провайдер<br><i>для редактирования</i>]
+    Confluence[Портал Confluence]
+    LLM_Analyst[LLM для анализа]
+    LLM_Editor[LLM для редактирования]
+    RAG_Editor[RAG - ТЗ разбитое на чанки<br>для точного опеределенияместа редактирования]
 
     %% Основной поток
     User -- "запрос + ссылка на ТЗ" --> Bot
     Bot -- "анализ ТЗ" --> Analyst
-    Analyst -- "чтение документа" --> Confluence
     Analyst -- "генерация рекомендаций" --> LLM_Analyst
+    Analyst -- "чтение документа" --> Confluence
     Analyst -- "рекомендации" --> Bot
     Bot -- "результат анализа" --> User
 
@@ -23,6 +26,7 @@ flowchart TD
     User -- "команда на правки" --> Bot
     Bot -- "правка по контексту" --> Editor
     Editor -- "чтение/поиск контекста" --> Confluence
+    Editor -- "точный поиск текста для правок" --> RAG_Editor
     Editor -- "генерация изменений" --> LLM_Editor
     Editor -- "запись изменений" --> Confluence
     Editor -- "подтверждение" --> Bot
@@ -36,3 +40,5 @@ flowchart TD
     style Confluence fill:#fce4ec,stroke:#880e4f
     style LLM_Analyst fill:#f1f8e9,stroke:#33691e
     style LLM_Editor fill:#f1f8e9,stroke:#33691e
+
+```
