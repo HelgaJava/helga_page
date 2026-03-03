@@ -3,7 +3,7 @@
 flowchart TD
     User[Пользователь<br>в корпоративном мессенджере]
 
-    subgraph SG["<div style='width: 400px; text-align: center'>AI-система для работы в Confluence: 2 агента + бот</div>"]
+    subgraph SG["<div style='width: 400px; text-align: center'>AI-система для работы с ТЗ (помощь системным аналитикам): 2 агента + бот</div>"]
         Bot[Чат-бот<br><i>маршрутизация, контекст</i>]
         Analyst[Агент-аналитик<br><i>LLM: анализ, рекомендации</i>]
         Editor[Агент-редактор<br><i>LLM + RAG: внесение правок</i>]
