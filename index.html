@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ольга | Java Developer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: #f5f5f5;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            color: #2c3e50;
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            color: #7f8c8d;
+            margin-top: 10px;
+        }
+        
+        section {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: #3498db;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 10px;
+        }
+        
+        .project {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 5px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            color: #7f8c8d;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 5px;
+        }
+        
+        .btn:hover {
+            background: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ольга</h1>
+        <p class="subtitle">Java Backend Developer | Spring | AI Integration</p>
+    </header>
+    
+    <section id="about">
+        <h2>Обо мне</h2>
+        <p>Java-разработчик с опытом создания enterprise-приложений. Специализируюсь на Spring Framework, микросервисной архитектуре и интеграции с AI-сервисами.</p>
+    </section>
+    
+    <section id="projects">
+        <h2>Проекты</h2>
+        
+        <div class="project">
+            <h3>🤖 AI ChatBot</h3>
+            <p>Telegram-бот для взаимодействия с AI-сервисом обработки документов. Принимает документы Word, передаёт в ai-agent-doc-edit и возвращает результат.</p>
+            <p><strong>Технологии:</strong> Java 17, Spring Boot, Telegram Bot API</p>
+            <a href="https://github.com/ваш-логин/ai-chatbot" class="btn">GitHub</a>
+        </div>
+        
+        <div class="project">
+            <h3>📄 AI Agent Doc Edit</h3>
+            <p>Сервис для обработки и редактирования Word-документов с помощью AI-агентов. Интеграция с GigaChat, поддержка Apache POI.</p>
+            <p><strong>Технологии:</strong> Java 17, Spring Boot, GigaChat API, Apache POI</p>
+            <a href="https://github.com/ваш-логин/ai-agent-doc-edit" class="btn">GitHub</a>
+        </div>
+    </section>
+    
+    <section id="tech">
+        <h2>Технологии</h2>
+        <p>Java 17 | Spring Boot | Spring AI | REST API | Maven | Git | Docker | Apache POI</p>
+    </section>
+    
+    <footer>
+        <p>© 2026 Ольга | <a href="https://github.com/ваш-логин">GitHub</a></p>
+        <p>Обновлено: <span id="date"></span></p>
+    </footer>
+    
+    <script>
+        document.getElementById('date').textContent = new Date().toLocaleDateString('ru-RU');
+    </script>
+</body>
+</html>
